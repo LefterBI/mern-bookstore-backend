@@ -10,7 +10,11 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  credentials: true
+}));
+
 app.use(express.json());
 
 const PRODUCTS_FILE = path.join(__dirname, 'data', 'books.json');
